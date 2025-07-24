@@ -5,8 +5,6 @@ from PyQt5.QtCore import Qt
 from dotenv import load_dotenv
 import os
 
-
-
 class WeatherApp(QWidget):
     def __init__(self):
         super().__init__()
