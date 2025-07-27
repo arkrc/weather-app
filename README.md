@@ -1,117 +1,106 @@
-# 🌤️ Weather App — My First Python Project
+# 🌦️ WeatherApp
 
-Welcome to my very first Python project — a simple **Weather App** built with `PyQt5`, `requests`, and `python-dotenv`.  
-This is also my **first GitHub repository**, created as a learning journey to explore the Python ecosystem and software development practices.
+A simple GUI-based Weather App built with **Python**, **PyQt5**, and the **OpenWeather API**.
 
----
-
-## 🚀 About the Project
-
-This is a desktop GUI application that allows users to enter a city name and fetch current weather information using the **OpenWeatherMap API**. It displays:
-
-- 🌡️ Temperature (in Fahrenheit)
-- 🌦️ Weather condition emoji
-- 📄 Description (like "clear sky", "light rain", etc.)
-
-The goal is to learn and apply:
-- Python programming basics
-- GUI programming with PyQt5
-- Using APIs
-- Keeping secrets secure using `.env` and `python-dotenv`
-- Git and GitHub workflows
+This is my first Python project and my first GitHub repository. I'm using it as a learning experience to explore how APIs, GUIs, and packaging work together.
 
 ---
 
-## 📦 Technologies Used
+## ✨ Features
 
-- [Python 3.13](https://www.python.org/)
-- [PyQt5](https://pypi.org/project/PyQt5/) — for the graphical interface
-- [Requests](https://pypi.org/project/requests/) — for API calls
-- [python-dotenv](https://pypi.org/project/python-dotenv/) — to handle API keys securely
-
----
-
-## 🛠️ Setup Instructions
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/weather-app.git
-cd weather-app
-```
-
-## 🔐 API Key Setup
-
-This project uses an API key that **should not** be hardcoded in the code for security reasons.  
-To run the project locally, follow these steps:
-
-### 1. Create a `.env` file
-In the root directory of the project, create a file named `.env` and add your API key:
-
-```
-API_KEY="your_api_key_here"
-````
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-````
-
-Make sure `python-dotenv` is included in your `requirements.txt`.
-
-### 3. Load the `.env` in your Python script
-
-```python
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-api_key = os.getenv("MY_API_KEY")
-```
+- Enter any city to get real-time weather
+- Fetches data from [OpenWeather API](https://openweathermap.org/current)
+- Displays temperature, weather condition, and emoji icon
+- Built using PyQt5 for the UI
+- Converts to `.exe` using PyInstaller
 
 ---
 
-## 🛠️ How to Run
+## 🚀 How to Run
 
-```bash
-python main.py
-```
+### 🖥️ Option 1: Run from Python (for developers)
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/WeatherApp.git
+   cd WeatherApp
+    ```
+2. Install dependencies:
 
-Replace `main.py` with the entry point of your project.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Create a `.env` file:
+
+   ```
+   API_KEY=your_openweather_api_key_here
+   ```
+
+4. Run the app:
+
+   ```bash
+   python main.py
+   ```
 
 ---
 
-## 🔒 Security Notes
+### 💡 Option 2: Run the `.exe` (for users)
 
-* ✅ `.env` is added to `.gitignore` so your API key is **never** pushed to GitHub.
-* ✅ A `.env.example` file is included to show what variables are needed (without real values).
-* 🚫 Never commit sensitive info like API keys or tokens!
+1. Download the latest release ZIP from [GitHub Releases](../../releases)
+2. Unzip the file
+3. Open the `.env` file and add your API key:
+
+   ```
+   API_KEY=your_openweather_api_key_here
+   ```
+4. Double-click `WeatherApp.exe` to launch!
 
 ---
 
-## 📂 File Structure (Example)
+## 🗂 Project Structure
 
 ```
-my-project/
-│
+WeatherApp/
 ├── main.py
-├── .env               # Your real API key (not committed)
-├── .env.example       # Template for others to know what env variables to use
-├── .gitignore
+├── .env.example
 ├── requirements.txt
-└── README.md
+├── README.md
+└── dist/
+    ├── WeatherApp.exe
+    └── .env
 ```
 
+---
+
+## 📦 Dependencies
+
+* `requests`
+* `python-dotenv`
+* `PyQt5`
+
+All are listed in `requirements.txt`.
 
 ---
 
-## 📚 License
+## 🔐 Security Note
 
-This project is open source and available under the [MIT License](LICENSE).
+* The `.env` file is **never uploaded to GitHub**.
+* Make sure to keep your API key **private** and **do not share** the `.env` file with others.
 
 ---
 
-## 🙌 Acknowledgements
+## 📜 License
 
-Thanks to all the open-source contributors and docs that helped me learn this stuff!
+MIT License — feel free to fork and modify.
+
+---
+
+## 🙌 Credits
+
+Thanks to:
+
+* [OpenWeather](https://openweathermap.org/) for the free API
+* PyQt5 and the Python community for the great libraries
+
+---
 
