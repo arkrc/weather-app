@@ -7,7 +7,6 @@ import os
 
 if getattr(sys, 'frozen', False):
     # Running as compiled .exe
-    base_path = sys._MEIPASS
     dotenv_path = os.path.join(os.path.dirname(sys.executable), ".env")
 else:
     # Running as script
