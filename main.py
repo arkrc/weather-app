@@ -5,6 +5,18 @@ from PyQt5.QtCore import Qt
 from dotenv import load_dotenv
 import os
 
+if getattr(sys, 'frozen', False):
+    # Running as compiled .exe
+    base_path = sys._MEIPASS
+    dotenv_path = os.path.join(os.path.dirname(sys.executable), ".env")
+else:
+    # Running as script
+    base_path = os.path.abspath(".")
+    dotenv_path = os.path.join(base_path, ".env")
+
+load_dotenv()
+api_key = os.getenv("API_KEY")
+
 class WeatherApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -76,8 +88,7 @@ class WeatherApp(QWidget):
 
     # noinspection PyUnboundLocalVariable
     def get_weather(self):
-        load_dotenv()
-        api_key = os.getenv("API_KEY")
+
         city = self.city_input.text()
         # noinspection SpellCheckingInspection
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
